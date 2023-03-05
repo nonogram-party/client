@@ -7,3 +7,5 @@ type Props = {
 export default function Paper({ children }: Props) {
   return <S.Container>{children}</S.Container>
 }
+
+Paper.StyledContainer = S.Container

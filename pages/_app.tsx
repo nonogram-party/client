@@ -1,4 +1,4 @@
-import { Navbar } from '@organisms'
+import { Navbar } from 'components/organisms/Navbar'
 import type { AppProps } from 'next/app'
 import { ThemeProvider } from 'styled-components'
 

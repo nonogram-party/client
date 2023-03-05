@@ -1,11 +1,19 @@
-import { Paper } from "@atoms"
+import { Avatar, Paper } from "@atoms"
 import { Logo } from "@molecules"
+
+import * as S from "./Navbar.styled"
+
+const user = {
+  name: "G",
+  avatar: "/images/duck.jpg"
+}
 
 function Navbar() {
   return (
-    <Paper>
+    <S.Container>
       <Logo />
-    </Paper>
+      <Avatar user={user} />
+    </S.Container>
   )
 }
 

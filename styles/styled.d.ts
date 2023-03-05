@@ -11,6 +11,7 @@ type TonedColor = {
 type SurfaceColor = {
   body: string
   paper: string
+  image: string
 }
 
 type TypographyColor = {

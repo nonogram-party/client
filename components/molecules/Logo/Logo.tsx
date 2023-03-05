@@ -1,6 +1,6 @@
 import { useTheme } from "styled-components"
 
-import { Typography } from "@atoms";
+import { Typography } from "components/atoms/Typography";
 
 import * as S from "./Logo.styled"
 

@@ -21,13 +21,16 @@
     "baseUrl": ".",
     "paths": {
       "@atoms": [
-        "./components/atoms/"
+        "components/atoms/"
       ],
       "@molecules": [
-        "./components/molecules/"
+        "components/molecules/"
       ],
       "@organisms": [
-        "./components/organisms/"
+        "components/organisms/"
+      ],
+      "@types": [
+        "types"
       ]
     }
   },
