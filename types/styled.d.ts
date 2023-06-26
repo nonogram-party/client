@@ -1,33 +1,33 @@
-import 'styled-components'
+import "styled-components";
 
 type TonedColor = {
-  100?: string
-  200?: string
-  300?: string
-  400?: string
-  500?: string
-}
+  100?: string;
+  200?: string;
+  300?: string;
+  400?: string;
+  500?: string;
+};
 
 type SurfaceColor = {
-  body: string
-  paper: string
-}
+  body: string;
+  paper: string;
+};
 
 type TypographyColor = {
-  body: string
-}
+  body: string;
+};
 
-declare module 'styled-components' {
+declare module "styled-components" {
   export interface DefaultTheme {
     colors: {
-      primary: TonedColor
-      secondary: TonedColor
-      red: TonedColor
-      green: TonedColor
-      black: TonedColor
-      shadow: string
-      background: SurfaceColor
-      text: TypographyColor
-    }
+      primary: TonedColor;
+      secondary: TonedColor;
+      red: TonedColor;
+      green: TonedColor;
+      black: TonedColor;
+      shadow: string;
+      background: SurfaceColor;
+      text: TypographyColor;
+    };
   }
 }
