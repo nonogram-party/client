@@ -1,20 +1,14 @@
 import { Avatar, Logo } from "@components";
-
-const user = {
-  name: "Gustavo",
-  avatar: "/images/duck.jpg",
-};
+import { Paper } from "components/Paper";
 
 function Navbar() {
   return (
-    <section className="paper items-center justify-between p-3">
+    <Paper className="items-center justify-between p-3">
       <Logo />
       <div className="flex gap-2">
-        <Avatar user={{ name: "Aaa" }} />
-        <Avatar user={user} />
         <Avatar />
       </div>
-    </section>
+    </Paper>
   );
 }
 

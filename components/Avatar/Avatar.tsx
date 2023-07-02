@@ -36,7 +36,10 @@ export default function Avatar({ user }: Props) {
   }
 
   return (
-    <button className="relative h-14 w-14 rounded-full border bg-background-paper-dark transition-transform hover:scale-110 active:scale-105">
+    <button
+      className="relative h-14 w-14 rounded-full border bg-background-paper-dark transition-transform hover:scale-110 active:scale-105"
+      title="menu"
+    >
       {renderProp()}
     </button>
   );
