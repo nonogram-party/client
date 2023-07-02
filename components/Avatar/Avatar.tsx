@@ -29,7 +29,7 @@ export default function Avatar({ user }: Props) {
       );
 
     return (
-      <span className="absolute bottom-4 left-3.5 text-4xl leading-0.7 text-secondary drop-shadow-logo">
+      <span className="absolute bottom-4 left-3.5 text-4xl leading-0.7 text-secondary-400 drop-shadow-logo">
         {user.name[0]}
       </span>
     );

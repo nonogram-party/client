@@ -10,10 +10,11 @@ module.exports = {
         100: "#FFF0F8",
         200: "#FFE1F0",
         DEFAULT: "#FFB4DA",
-        400: "#FF69B4",
+        400: "#FF3D9E",
       },
       secondary: {
         DEFAULT: "#4FEAFF",
+        400: "#0099AD",
       },
       red: {
         DEFAULT: "#FC6984",
