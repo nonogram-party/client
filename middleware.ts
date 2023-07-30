@@ -1,6 +1,15 @@
 import { NextRequest, NextResponse } from "next/server";
 import langParser from "accept-language-parser";
 
+import {
+  getDefaultLocale,
+  getLocalePartsFrom,
+  getLocalesList,
+} from "helpers/i18n";
+
+const defaultLocale = getDefaultLocale();
+const locales = getLocalesList();
+
 const findBestMatchingLocale = (acceptLangHeader: string) => {
   // parse the locales acceptable in the header, and sort them by priority (q)
   const parsedLangs = langParser.parse(acceptLangHeader);
@@ -8,7 +17,6 @@ const findBestMatchingLocale = (acceptLangHeader: string) => {
   // find the first locale that matches a locale in our list
   for (let i = 0; i < parsedLangs.length; i++) {
     const parsedLang = parsedLangs[i];
-    // attempt to match both the language and the country
     const matchedLocale = locales.find((locale) => {
       const localeParts = getLocalePartsFrom({ locale });
       return parsedLang.code === localeParts.lang;
@@ -19,33 +27,6 @@ const findBestMatchingLocale = (acceptLangHeader: string) => {
   }
   // if we didn't find a match, return the default locale
   return defaultLocale;
-};
-
-const defaultLocale = "pt";
-let locales = ["pt", "en"];
-
-type PathnameLocale = {
-  pathname: string;
-  locale?: never;
-};
-type ISOLocale = {
-  pathname?: never;
-  locale: string;
-};
-
-type LocaleSource = PathnameLocale | ISOLocale;
-
-const getLocalePartsFrom = ({ pathname, locale }: LocaleSource) => {
-  if (locale) {
-    return {
-      lang: locale.toLowerCase(),
-    };
-  } else {
-    const pathnameParts = pathname!.toLowerCase().split("/");
-    return {
-      lang: pathnameParts[1],
-    };
-  }
 };
 
 export function middleware(request: NextRequest) {
@@ -59,8 +40,6 @@ export function middleware(request: NextRequest) {
   });
 
   if (pathnameIsMissingValidLocale) {
-    // rewrite it so next.js will render `/` as if it was `/en/us`
-
     const matchedLocale = findBestMatchingLocale(
       request.headers.get("Accept-Language") || defaultLocale
     );
@@ -77,12 +56,7 @@ export function middleware(request: NextRequest) {
     }
   }
 
-  console.log(currentPathnameParts.lang, locale.lang);
-  // Check if the default locale is in the pathname
   if (currentPathnameParts.lang === locale.lang) {
-    // we want to REMOVE the default locale from the pathname,
-    // and later use a rewrite so that Next will still match
-    // the correct code file as if there was a locale in the pathname
     return NextResponse.redirect(
       new URL(
         pathname.replace(

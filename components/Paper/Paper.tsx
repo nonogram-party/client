@@ -1,4 +1,4 @@
-import { ReactComponent } from "types/component";
+import { ReactComponent } from "types/components";
 
 export default function Paper({ children, className = "" }: ReactComponent) {
   return (
