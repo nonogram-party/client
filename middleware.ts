@@ -1,14 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import langParser from "accept-language-parser";
 
-import {
-  getDefaultLocale,
-  getLocalePartsFrom,
-  getLocalesList,
-} from "helpers/i18n";
-
-const defaultLocale = getDefaultLocale();
-const locales = getLocalesList();
+import { defaultLocale, getLocalePartsFrom, locales } from "i18n";
 
 const findBestMatchingLocale = (acceptLangHeader: string) => {
   // parse the locales acceptable in the header, and sort them by priority (q)
