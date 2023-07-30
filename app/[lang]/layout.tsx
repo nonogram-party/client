@@ -16,9 +16,9 @@ export const metadata: Metadata = {
   title: "Nonogram Party",
 };
 
-export default function RootLayout({ children }: Page) {
+export default function RootLayout({ children, params }: Page) {
   return (
-    <html className={`${mali.className} m-0 box-border p-0`}>
+    <html className={`${mali.className} m-0 box-border p-0`} lang={params.lang}>
       <body className="bg-background-body p-6">
         <Navbar />
         {children}
