@@ -1,6 +1,7 @@
 import Image from "next/image";
 
-import { User } from "types/user";
+import { Icon } from "components";
+import { User } from "types";
 
 type Props = {
   user?: User;
@@ -8,16 +9,7 @@ type Props = {
 
 export default function Avatar({ user }: Props) {
   function renderProp() {
-    if (!user)
-      return (
-        <Image
-          src={"/icons/user_shape.svg"}
-          alt=""
-          width="36"
-          height="36"
-          className="absolute bottom-4 left-3.5 w-1/2"
-        />
-      );
+    if (!user) return <Icon name="person_fill" imageClassName="p-1" />;
     if (user.avatar)
       return (
         <Image

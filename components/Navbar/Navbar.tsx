@@ -1,5 +1,4 @@
-import { Avatar, Logo } from "@components";
-import { Paper } from "components/Paper";
+import { Avatar, Logo, Paper } from "components";
 
 function Navbar() {
   return (
