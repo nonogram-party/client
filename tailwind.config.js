@@ -36,6 +36,9 @@ module.exports = {
       dropShadow: {
         logo: "2px 2px 1px #000",
       },
+      boxShadow: {
+        "inner-toggle": "inset 4px 5px 8px -3px #000000",
+      },
       lineHeight: {
         0.7: 0.7,
       },

@@ -1,4 +1,4 @@
 export type ReactComponent = {
   className?: string;
-  children: React.ReactNode;
+  children?: React.ReactNode;
 };

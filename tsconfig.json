@@ -16,8 +16,10 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
-      "@components": ["./components/"],
-      "@types": ["./types/"]
+      "components": ["components/index.ts"],
+      "types": ["types/index.ts"],
+      "helpers": ["helpers/index.ts"],
+      "i18n": ["i18n/index.ts"]
     },
     "plugins": [
       {
